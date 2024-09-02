@@ -1,0 +1,24 @@
+{{#extend "layouts/main"}}
+  {{#content "body"}}
+    <h1>Tienda</h1>
+    <ul>
+      {{#each products}}
+        <li>
+          <h2>{{this.title}}</h2>
+          <p>{{this.description}}</p>
+          <p>Precio: {{this.price}} USD</p>
+          <p>Stock: {{this.stock}}</p>
+          <button
+            onclick="window.location.href='/add-to-cart/{{this._id}}'"
+          >Agregar al carrito</button>
+          {{#if user.role "admin"}}
+            <button
+              onclick="window.location.href='/delete-product/{{this._id}}'"
+            >Eliminar del catálogo</button>
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+    <a href="/cart">Carrito de compras</a>
+  {{/content}}
+{{/extend}}

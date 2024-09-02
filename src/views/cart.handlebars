@@ -1,0 +1,19 @@
+{{#extend "layouts/main"}}
+  {{#content "body"}}
+    <h1>Carrito de Compras</h1>
+    <ul>
+      {{#each cartItems}}
+        <li>
+          <h2>{{this.product.title}}</h2>
+          <p>Precio: {{this.product.price}} USD</p>
+          <p>Cantidad: {{this.quantity}}</p>
+          <button
+            onclick="window.location.href='/checkout/{{this.product._id}}'"
+          >Checkout</button>
+        </li>
+      {{/each}}
+    </ul>
+    <a href="/finalize-purchase">Finalizar compra</a>
+    <a href="/store">Volver a la tienda</a>
+  {{/content}}
+{{/extend}}

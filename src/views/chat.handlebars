@@ -1,0 +1,13 @@
+{{#extend "layouts/main"}}
+  {{#content "body"}}
+    <h1>Chat en Vivo</h1>
+    <div id="messages">
+      {{#each messages}}
+        <p><strong>{{this.user.first_name}}:</strong> {{this.message}}</p>
+      {{/each}}
+    </div>
+    <input type="text" id="messageInput" placeholder="Escribe tu mensaje..." />
+    <button id="sendMessage">Enviar</button>
+    <a href="/profile">Volver al perfil</a>
+  {{/content}}
+{{/extend}}

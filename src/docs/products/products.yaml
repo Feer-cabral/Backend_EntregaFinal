@@ -1,0 +1,29 @@
+openapi: 3.0.0
+info:
+  title: API de Productos
+  version: 1.0.0
+paths:
+  /products:
+    get:
+      summary: Obtener todos los productos
+      responses:
+        "200":
+          description: Lista de productos
+        "500":
+          description: Error en el servidor
+  /products/{id}:
+    get:
+      summary: Obtener producto por ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Detalles del producto
+        "404":
+          description: Producto no encontrado
+        "500":
+          description: Error en el servidor

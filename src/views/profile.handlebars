@@ -1,0 +1,14 @@
+{{#extend "layouts/main"}}
+  {{#content "body"}}
+    <h1>Bienvenido, {{user.first_name}} {{user.last_name}}</h1>
+    <p>Email: {{user.email}}</p>
+    <p>Rol: {{user.role}}</p>
+    {{#if user.role "admin"}}
+      <a href="/add-product">Agregar productos en tiempo real</a>
+    {{/if}}
+    <a href="/store">Tienda</a>
+    <a href="/cart">Carrito de compras</a>
+    <a href="/chat">Chat en vivo</a>
+    <a href="/logout">Cerrar sesión</a>
+  {{/content}}
+{{/extend}}
